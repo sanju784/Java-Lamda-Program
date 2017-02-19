@@ -29,18 +29,22 @@ public class lambda {
     }
 }
 
+@FunctionalInterface
 interface number {
   double getValue();
 }
 
+@FunctionalInterface
 interface factorial {
     int fact(int n);
 }
 
+@FunctionalInterface
 interface reverseStr {
     String func(String n);
 }
 
+@FunctionalInterface
 interface display {
    void show();
 }
