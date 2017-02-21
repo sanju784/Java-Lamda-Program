@@ -26,6 +26,19 @@ public class lambda {
       // lambda exp with no return type and argument
       display dis = () -> System.out.println("Hello Lambda");
       dis.show();
+
+	  //single function within the functional interface can be used to execute multiple operations having same signature
+      math add = (x, y) -> x+y;
+      System.out.println("Addition is " + add.op(5,10));
+
+      math sub = (x,y) -> x-y;
+      System.out.println("Subtract is " + sub.op(5, 10));
+
+      math mul = (x,y) -> x*y;
+      System.out.println("Multiplication is " + mul.op(5, 10));
+
+      math div = (x,y) -> x/y;
+      System.out.println("Division is " + div.op(5, 10));
     }
 }
 
@@ -36,16 +49,20 @@ interface number {
 
 @FunctionalInterface
 interface factorial {
-    int fact(int n);
+  int fact(int n);
 }
 
 @FunctionalInterface
 interface reverseStr {
-    String func(String n);
+  String func(String n);
 }
 
 @FunctionalInterface
 interface display {
-   void show();
+  void show();
 }
 
+@FunctionalInterface
+interface math{
+  int op(int a, int b);
+}
